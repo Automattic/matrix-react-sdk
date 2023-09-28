@@ -71,4 +71,26 @@ describe("MemberAvatar", () => {
 
         expect(avatar!.getAttribute("src")).not.toBe("");
     });
+
+    it("should render altText", async () => {
+        const { container } = render(getComponent({altText: "foo"}));
+
+        let avatar: HTMLElement;
+        await waitFor(() => {
+            avatar = getByTestId(container, "avatar-img");
+        });
+
+        expect(avatar!.getAttribute("aria-label")).toBe("foo");
+    });
+
+    it("should use default value for altText", async () => {
+        const { container } = render(getComponent({}));
+
+        let avatar: HTMLElement;
+        await waitFor(() => {
+            avatar = getByTestId(container, "avatar-img");
+        });
+
+        expect(avatar!.getAttribute("aria-label")).toBe("Profile picture");
+    });
 });

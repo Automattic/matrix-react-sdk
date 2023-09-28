@@ -27,7 +27,7 @@ import UserIdentifierCustomisations from "../../../customisations/UserIdentifier
 import { useRoomMemberProfile } from "../../../hooks/room/useRoomMemberProfile";
 import { _t } from "../../../languageHandler";
 
-interface IProps extends Omit<React.ComponentProps<typeof BaseAvatar>, "name" | "idName" | "url"> {
+interface IProps extends Omit<React.ComponentProps<typeof BaseAvatar>, "name" | "idName" | "url" | "altText"> {
     member: RoomMember | null;
     fallbackUserId?: string;
     size: string;
@@ -40,6 +40,7 @@ interface IProps extends Omit<React.ComponentProps<typeof BaseAvatar>, "name" | 
     forceHistorical?: boolean; // true to deny `useOnlyCurrentProfiles` usage. Default false.
     hideTitle?: boolean;
     children?: ReactNode;
+    altText?: string;
 }
 
 export default function MemberAvatar({
@@ -50,6 +51,7 @@ export default function MemberAvatar({
     fallbackUserId,
     hideTitle,
     member: propsMember,
+    altText,
     ...props
 }: IProps): JSX.Element {
     const card = useContext(CardContext);
@@ -80,6 +82,10 @@ export default function MemberAvatar({
         }
     }
 
+    if (!altText) {
+        altText = _t("common|user_avatar");
+    }
+
     return (
         <BaseAvatar
             {...props}
@@ -99,7 +105,7 @@ export default function MemberAvatar({
                       }
                     : props.onClick
             }
-            altText={_t("common|user_avatar")}
+            altText={altText}
         />
     );
 }
