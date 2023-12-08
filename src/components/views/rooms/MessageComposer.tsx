@@ -602,6 +602,8 @@ export class MessageComposer extends React.Component<IProps, IState> {
                 className={classes}
                 ref={this.ref}
                 aria-describedby={this.state.recordingTimeLeftSeconds ? this.tooltipId : undefined}
+                aria-label="Message composer"
+                role="navigation"
             >
                 {recordingTooltip}
                 <div className="mx_MessageComposer_wrapper">
