@@ -38,6 +38,9 @@ describe("MatrixClientPeg", () => {
     afterEach(() => {
         localStorage.clear();
         jest.restoreAllMocks();
+
+        // some of the tests assign `MatrixClientPeg.matrixClient`: clear it, to prevent leakage between tests
+        peg.unset();
     });
 
     it("setJustRegisteredUserId", () => {
@@ -155,6 +158,8 @@ describe("MatrixClientPeg", () => {
         it("should show error modal when store database closes", async () => {
             testPeg.safeGet().isGuest = () => false;
             const emitter = new EventEmitter();
+            const platform: any = { getHumanReadableName: jest.fn() };
+            PlatformPeg.set(platform);
             testPeg.safeGet().store.on = emitter.on.bind(emitter);
             const spy = jest.spyOn(Modal, "createDialog");
             await testPeg.assign();

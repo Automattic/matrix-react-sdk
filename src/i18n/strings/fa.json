@@ -20,8 +20,10 @@
         "add_existing_room": "اضافه‌کردن اتاق موجود",
         "approve": "تایید",
         "back": "بازگشت",
+        "call": "تماس",
         "cancel": "لغو",
         "change": "تغییر بده",
+        "clear": "پاک کردن",
         "click_to_copy": "برای گرفتن رونوشت کلیک کنید",
         "close": "بستن",
         "complete": "تکمیل",
@@ -72,6 +74,7 @@
         "reject": "پس زدن",
         "reload": "بارگذاری مجدد",
         "remove": "حذف کن",
+        "rename": "تغییر نام",
         "reply": "پاسخ",
         "report_content": "گزارش محتوا",
         "resend": "بازفرست",
@@ -735,7 +738,6 @@
         "unknown_error_code": "کد خطای ناشناخته",
         "update_power_level": "تغییر سطح قدرت انجام نشد"
     },
-    "error_database_closed_description": "این ممکن است به دلیل باز بودن برنامه در چندین برگه یا به دلیل پاک کردن داده های مرورگر باشد.",
     "error_database_closed_title": "پایگاه داده به طور غیرمنتظره ای بسته شد",
     "error_dialog": {
         "error_loading_user_profile": "امکان نمایش پروفایل کاربر میسر نیست",
@@ -1073,8 +1075,6 @@
     "notifications": {
         "all_messages": "همه‌ی پیام‌ها",
         "class_other": "دیگر",
-        "colour_bold": "پررنگ",
-        "colour_none": "هیچ‌کدام",
         "default": "پیشفرض",
         "enable_prompt_toast_description": "فعال‌کردن اعلان‌های دسکتاپ",
         "enable_prompt_toast_title": "آگاهی‌ها",

@@ -366,7 +366,7 @@ const SpacePanel: React.FC = () => {
                         onDragEndHandler();
                     }}
                 >
-                    <div
+                    <nav
                         className={classNames("mx_SpacePanel", { collapsed: isPanelCollapsed })}
                         onKeyDown={(ev) => {
                             const navAction = getKeyBindingsManager().getNavigationAction(ev);
@@ -393,6 +393,7 @@ const SpacePanel: React.FC = () => {
                             onKeyDownHandler(ev);
                         }}
                         ref={ref}
+                        aria-label={_t("common|spaces")}
                     >
                         <UserMenu isPanelCollapsed={isPanelCollapsed}>
                             <AccessibleTooltipButton
@@ -431,7 +432,7 @@ const SpacePanel: React.FC = () => {
                         </Droppable>
 
                         <QuickSettingsButton isPanelCollapsed={isPanelCollapsed} />
-                    </div>
+                    </nav>
                 </DragDropContext>
             )}
         </RovingTabIndexProvider>

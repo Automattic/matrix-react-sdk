@@ -58,7 +58,7 @@ function JoinCallButtonWithCall({ onClick, call }: JoinCallButtonWithCallProps):
             className="mx_IncomingCallToast_joinButton"
             onClick={onClick}
             disabled={disabledTooltip !== null}
-            tooltip={disabledTooltip}
+            tooltip={disabledTooltip ?? undefined}
             kind="primary"
         >
             {_t("action|join")}
@@ -131,6 +131,7 @@ export function IncomingCallToast({ notifyEvent }: Props): JSX.Element {
                 action: Action.ViewRoom,
                 room_id: room?.roomId,
                 view_call: true,
+                skipLobby: "shiftKey" in e ? e.shiftKey : false,
                 metricsTrigger: undefined,
             });
         },

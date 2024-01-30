@@ -1,6 +1,8 @@
 {
     "a11y": {
+        "emoji_picker": "Selektor emoji",
         "jump_first_invite": "Przejdź do pierwszego zaproszenia.",
+        "message_composer": "Kompozytor wiadomości",
         "n_unread_messages": {
             "other": "%(count)s nieprzeczytanych wiadomości.",
             "one": "1 nieprzeczytana wiadomość."
@@ -9,7 +11,10 @@
             "other": "%(count)s nieprzeczytanych wiadomości, wliczając wzmianki.",
             "one": "1 nieprzeczytana wzmianka."
         },
+        "recent_rooms": "Ostatnie pokoje",
         "room_name": "Pokój %(name)s",
+        "room_status_bar": "Pasek stanu pokoju",
+        "seek_bar_label": "Pasek wyszukiwania audio",
         "unread_messages": "Nieprzeczytane wiadomości.",
         "user_menu": "Menu użytkownika"
     },
@@ -251,6 +256,7 @@
             "error_homeserver_lacks_support": "Serwer domowy nie wspiera logowania innych urządzeń.",
             "error_invalid_scanned_code": "Zeskanowany kod jest nieprawidłowy.",
             "error_linking_incomplete": "Wiązanie nie zostało zakończone w ustalonym czasie.",
+            "error_rate_limited": "Za dużo prób w krótkim odstępie czasu. Odczekaj trochę, zanim spróbujesz ponownie.",
             "error_request_cancelled": "Żądanie zostało anulowane.",
             "error_request_declined": "Żądanie zostało odrzucone przez drugie urządzenie.",
             "error_unexpected": "Wystąpił niespodziewany błąd.",
@@ -505,7 +511,7 @@
         "options": "Opcje",
         "orphan_rooms": "Inne pokoje",
         "password": "Hasło",
-        "people": "Ludzie",
+        "people": "Osoby",
         "preferences": "Preferencje",
         "presence": "Prezencja",
         "preview_message": "Hej, ty. Jesteś super!",
@@ -1058,9 +1064,13 @@
         "update_power_level": "Nie udało się zmienić poziomu mocy"
     },
     "error_app_open_in_another_tab": "Zmień kartę aby połączyć się do %(brand)s. Ta karta może zostać zamknięta.",
+    "error_app_open_in_another_tab_title": "%(brand)s jest włączony na innej karcie",
     "error_app_opened_in_another_window": "%(brand)s jest już otwarty w innym oknie. Kliknij \"%(label)s\", aby otworzyć tutaj %(brand)s i odłączyć drugie okno.",
-    "error_database_closed_description": "Może być to spowodowane przez aplikacje otwartą w wielu kartach lub po wyczyszczeniu danych przeglądarki.",
-    "error_database_closed_title": "Baza danych została nieoczekiwanie zamknięta",
+    "error_database_closed_description": {
+        "for_desktop": "Twój dysk może być pełny. Zwolnij trochę miejsca i wczytaj ponownie.",
+        "for_web": "Jeśli niedawno czyściłeś dane przeglądania, można się spodziewać tej wiadomości. %(brand)s może być otwarty na innej karcie lub Twój dysk jest pełny. Zwolnij trochę miejsca i spróbuj ponownie"
+    },
+    "error_database_closed_title": "%(brand)s przestał działać",
     "error_dialog": {
         "copy_room_link_failed": {
             "description": "Nie można skopiować linku pokoju do schowka.",
@@ -1438,7 +1448,10 @@
         "report_to_moderators": "Zgłoś do moderatorów",
         "report_to_moderators_description": "W pokojach, które wspierają moderacje, przycisk \"Zgłoś\" pozwoli Ci zgłosić nadużycia moderatorom.",
         "rust_crypto": "Implementacja kryptografii Rust",
-        "rust_crypto_disabled_notice": "Można go tylko włączyć przez config.json",
+        "rust_crypto_in_config": "Kryptografia Rust nie może zostać włączona na tym wydaniu %(brand)s",
+        "rust_crypto_in_config_description": "Przejście na kryptografię Rust wymaga procesu migracji, która może potrwać kilka minut. Nie można jej wyłączyć; zachowaj ostrożność!",
+        "rust_crypto_optin_warning": "Przejście na kryptografię Rust wymaga procesu migracji, która może potrwać kilka minut. Aby ją wyłączyć, będziesz musiał zalogować się ponownie; zachowaj ostrożność!",
+        "rust_crypto_requires_logout": "Po włączeniu, kryptografia Rust może zostać wyłączona tylko po ponownym zalogowaniu.",
         "sliding_sync": "Tryb synchronizacji przesuwanej",
         "sliding_sync_checking": "Sprawdzanie…",
         "sliding_sync_configuration": "Konfiguracja synchronizacji przesuwanej",
@@ -1578,6 +1591,7 @@
     },
     "member_list_back_action_label": "Członkowie pokoju",
     "message_edit_dialog_title": "Edycje wiadomości",
+    "migrating_crypto": "Trzymaj się mocno. Aktualizujemy Element, aby szyfrowanie było szybsze i bardziej niezawodne.",
     "mobile_guide": {
         "toast_accept": "Użyj aplikacji",
         "toast_description": "%(brand)s jest eksperymentalne na przeglądarce mobilnej. Dla lepszego doświadczenia i najnowszych funkcji użyj naszej darmowej natywnej aplikacji.",
@@ -1594,12 +1608,6 @@
         "all_messages_description": "Otrzymuj powiadomienie każdej wiadomości",
         "class_global": "Globalne",
         "class_other": "Inne",
-        "colour_bold": "Pogrubienie",
-        "colour_grey": "Szary",
-        "colour_muted": "Wyciszony",
-        "colour_none": "Brak",
-        "colour_red": "Czerwony",
-        "colour_unsent": "Niewysłane",
         "default": "Zwykły",
         "email_pusher_app_display_name": "Powiadomienia e-mail",
         "enable_prompt_toast_description": "Włącz powiadomienia na pulpicie",
@@ -1608,6 +1616,12 @@
         "error_change_title": "Zmień ustawienia powiadomień",
         "keyword": "Słowo kluczowe",
         "keyword_new": "Nowe słowo kluczowe",
+        "level_activity": "Aktywności",
+        "level_highlight": "Wyróżnij",
+        "level_muted": "Wyciszony",
+        "level_none": "Brak",
+        "level_notification": "Powiadomienie",
+        "level_unsent": "Niewysłane",
         "mark_all_read": "Oznacz wszystko jako przeczytane",
         "mentions_and_keywords": "@wzmianki & słowa kluczowe",
         "mentions_and_keywords_description": "Otrzymuj powiadomienia tylko z wzmiankami i słowami kluczowymi zgodnie z Twoimi <a>ustawieniami</a>",
@@ -1661,7 +1675,7 @@
         "send_dm": "Wyślij wiadomość prywatną",
         "set_up_profile": "Utwórz swój profil",
         "set_up_profile_action": "Twój profil",
-        "set_up_profile_description": "Upewnij się, że ludzie wiedzą, że to naprawdę ty",
+        "set_up_profile_description": "Upewnij się, że osoby wiedzą, że to naprawdę ty",
         "use_case_community_messaging": "Członkowie społeczności online",
         "use_case_heading1": "Wszedłeś",
         "use_case_heading2": "Z kim będziesz najczęściej rozmawiał?",
@@ -1940,6 +1954,7 @@
             "video_call_ec_layout_spotlight": "Centrum uwagi",
             "video_room_view_chat_button": "Wyświetl oś czasu czatu"
         },
+        "header_face_pile_tooltip": "Przełącz listę członków",
         "header_untrusted_label": "Niezaufany",
         "inaccessible": "Ten pokój lub przestrzeń nie jest dostępna w tym momencie.",
         "inaccessible_name": "%(roomName)s nie jest dostępny w tym momencie.",
@@ -2273,7 +2288,7 @@
             "history_visibility_world_readable": "Każdy",
             "join_rule_description": "Decyduj kto może dołączyć %(roomName)s.",
             "join_rule_invite": "Prywatny (tylko na zaproszenie)",
-            "join_rule_invite_description": "Tylko zaproszeni ludzie mogą dołączyć.",
+            "join_rule_invite_description": "Tylko zaproszone osoby mogą dołączyć",
             "join_rule_knock": "Poproś o dołączenie",
             "join_rule_knock_description": "Osoby nie mogą dołączyć, dopóki nie otrzymają zezwolenia.",
             "join_rule_public_description": "Każdy może znaleźć i dołączyć.",
